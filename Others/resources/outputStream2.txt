@@ -1,0 +1,4 @@
+String allowed here, but integer not allowed A 
+10String allowed here, but integer not allowed A 
+10String allowed here, but integer not allowed A 
+10

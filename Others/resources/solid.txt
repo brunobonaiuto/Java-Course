@@ -1,0 +1,27 @@
+SOLID PRINCIPLES
+-----------------------------
+
+* Single responsability: Each class should have only one sole purpose, and not be filled with excessive functionality
+	* ie. adding printing function to a class that calculates the area of a figure, violates this principle
+		* sol: creates a class that prints
+-----------------------------
+* Open Closed: Classes should be open for EXTENSION, closed for modification. Modification means changing the code of an existing class, and extension means adding new functionality.
+	* If i add another object, should i modify the existing code ? I should not.. otherwise is not open closed
+	*  ie. in a class that calculates the area of figure, adding another figure to calculate shape violates this principle
+	* extending means that the area calculator class can recieve more shapes objects (interface) and works, but we are not modifing it
+	* In order words, we should know how to re-write our existing class for implementing new features (re-write means the refactoring face)
+		* sol: create a interface, that has the thing in common with all the other classes. In this case Interface Shape, because each figure has
+		it owns shape
+			Interface shape() has inside the area methods. and each class can implement it owns version of area, and area calculator recieve them
+-----------------------------
+* Liskov Substitution: this means that every subclass or derived class should be Sustitutable for their based or parent class
+	* this means that: a class implementing an interface should be able to use all the methods, and not returning 0 or null. this is wrong
+	* the class is not able to do(abstract methods) what the parent class (also the interface) must to.
+-----------------------------
+* Interface segreation: Interfaces should not force classes to implemetn what the class cannot do. Large interfaces (interfaces that are growing) should be divided into small ones
+	* in other words, if a new shape is called cube implements shape, them shape added another abstract method called volumen, then all the previous figures using interface cannot use this method because they dont have volume. IN THIS CASE WE NEED TO CREATE A NEW INTERFACE CALLED 
+	ThreeDimensionShape, and Cube implements the two interfaces, the shape and the ThreeDimensionShape.
+	* Now the ThreeDimensionShape has the abstract method "volume" and the other figures will continue using the normal shape interface.
+-----------------------------
+* Dependency Inversionç Components should depend on abstraction not on concretions
+	* ie. Components should depend on interfaces for example
